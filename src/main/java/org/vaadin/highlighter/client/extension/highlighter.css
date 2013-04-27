@@ -1,6 +1,4 @@
 .parentOutline {
-	border: 1px solid #FF33CC;
-	margin: 10px 10px 10px 10px;
 }
 
 .debugLabel {
@@ -9,5 +7,4 @@
 	display: block;
 	font-size: 10px;
 	color: white;
-	height: 12px;
 }
