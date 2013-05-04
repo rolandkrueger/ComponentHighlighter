@@ -8,6 +8,17 @@ import com.vaadin.server.VaadinService;
 
 public class ComponentHighlighterExtension extends AbstractExtension {
 
+  public ComponentHighlighterExtension() {
+    super();
+  }
+
+  public ComponentHighlighterExtension(AbstractClientConnector target) {
+    super();
+    if (target != null) {
+      extend(target);
+    }
+  }
+
   @Override
   public void extend(AbstractClientConnector target) {
     if (VaadinService.getCurrent().getDeploymentConfiguration().isProductionMode()) {
