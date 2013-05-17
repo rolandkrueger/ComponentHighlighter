@@ -37,16 +37,15 @@ Here you simply create a new extension object for your component if the applicat
 
 The extension itself guarantees that in production mode an extended component will not be touched in any way on the client side. It is a good thing to do the above check for the debug mode, though, in order to not waste any memory when running in production mode.
 
+Customization
+-------------
+You don't like pink? Well, if you deem the highlighting labels to be just too visually striking, you can adjust the CSS for them accordingly. The highlighter's CSS is implemented with a GWT ClientBundle. This client bundle is created by a factory class. Using GWT's deferred binding mechanism, you can swap the implementation of this factory in your widget set module descriptor. Your own factory implementation can then provide a different client bundle that provides different styles for the highlighting label.
+
 The following statement has to be added to your widget set definition:
 
  	<replace-with class="com.example.client.MyResourceProvider">
  		<when-type-is class="org.vaadin.highlighter.client.extension.DefaultResourceProvider" />
  	</replace-with>
-
-Customization
--------------
-You don't like pink? Well, if you deem the highlighting labels to be just too visually striking, you can adjust the CSS for them accordingly. The highlighter's CSS is implemented with a GWT ClientBundle. This client bundle is created by a factory class. Using GWT's deferred binding mechanism, you can swap the implementation of this factory in your widget set module descriptor. Your own factory implementation can then provide a different client bundle that provides different styles for the highlighting label.
-
 
 Licensing
 ---------
