@@ -11,14 +11,15 @@ import com.vaadin.server.VaadinService;
  * This extension adds an eye-catching label to an extended component on the
  * client-side that displays the component's fully-qualified class name by
  * default. This label will only be active when the application is running in
- * debug mode. In production mode, the client-side component will not be
- * touched.
+ * Vaadin's debug mode. In production mode, the client-side component will not
+ * be touched.
  * </p>
  * <p>
  * The highlighting labels will not be visible right away. They first have to be
  * activated by using Vaadin's <code>debug</code> URL parameter. You can either
- * add <code>?debug</code> to the current URL or <code>?debug=quiet</code> to
- * hide Vaadin's debug console at the same time.
+ * add <code>?debug</code> to the current URL to make the labels visible. Or you
+ * can alternatively use <code>?debug=quiet</code> to simultaneously hide
+ * Vaadin's debug console at the same time.
  * </p>
  * 
  * @author Roland Krüger
@@ -32,7 +33,8 @@ public class ComponentHighlighterExtension extends AbstractExtension {
 
   /**
    * Creates a new extension object and immediately extends the specified
-   * component.
+   * component. The component will only be extended, when the application is
+   * running in Vaadin's debug mode.
    * 
    * @param target
    *          Connector to be extended. This can be any connector provided that
@@ -93,5 +95,4 @@ public class ComponentHighlighterExtension extends AbstractExtension {
   public void setComponentDebugLabel(String label) {
     getState().debugLabel = label;
   }
-
 }

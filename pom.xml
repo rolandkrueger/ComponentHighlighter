@@ -61,7 +61,7 @@
 						<manifestEntries>
 							<Vaadin-Package-Version>1</Vaadin-Package-Version>
 							<Vaadin-Widgetsets>org.vaadin.highlighter.ComponentHighlighterWidgetset</Vaadin-Widgetsets>
-							<Vaadin-License-Title>Apache 2.0</Vaadin-License-Title>
+							<Vaadin-License-Title>Apache License 2.0</Vaadin-License-Title>
 							<Implementation-Vendor>Roland Krüger</Implementation-Vendor>
 						</manifestEntries>
 					</archive>
