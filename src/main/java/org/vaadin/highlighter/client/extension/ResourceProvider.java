@@ -8,16 +8,45 @@ import com.google.gwt.resources.client.CssResource;
  * the {@link ComponentHighlighterConnector}. If nothing different is configured
  * through the widgetset definition (GWT module descriptor), then GWT will
  * create a {@link DefaultResourceProvider} instance in
- * {@link ComponentHighlighterConnector} as {@link ResourceProvider}. This
- * default resource provider will ensure that the {@link CssResource}s as
+ * {@link ComponentHighlighterConnector} as {@link ResourceProvider} instance.
+ * This default resource provider will ensure that the {@link CssResource}s as
  * defined in highlighter.css are used by default.
  * </p>
  * <p>
- * This can be changed through GWT's deferred binding mechanism.
+ * The purpose of this interface is to make it possible to substitute the CSS
+ * definition used for the component highlighter with an own definition. This
+ * can be achieved through GWT's deferred binding mechanism. To do so, you have
+ * to provide your own implementation of {@link ResourceProvider} that returns
+ * your own sub-interface of {@link ComponentHighlighterResources} through
+ * {@link #getResources()}. Have a look at {@link DefaultResourceProvider} and
+ * {@link DefaultComponentHighlighterResources} to see how your own client
+ * bundle has to be designed.
+ * </p>
+ * <p>
+ * After you have written your custom implementation of this interface (name for
+ * example <code>MyResourceProvider</code>) and your own subclass of
+ * {@link ComponentHighlighterResources}, you can augment your widgetset
+ * definition with the following statement for deferred binding which will
+ * effectively replace the {@link DefaultResourceProvider} with your own
+ * implementation:
+ * 
+ * <pre>
+ * &lt;replace-with class="com.example.client.MyResourceProvider"&gt;
+ *     &lt;when-type-is class="org.vaadin.highlighter.client.extension.DefaultResourceProvider" /&gt;
+ * &lt;/replace-with&gt;
+ * </pre>
+ * 
  * </p>
  * 
  * @author Roland Krüger
+ * @see DefaultResourceProvider
+ * @see DefaultComponentHighlighterResources
  */
 public interface ResourceProvider {
+
+  /**
+   * Return the client bundle interface to be used for styling the component
+   * highlighting labels.
+   */
   public ComponentHighlighterResources getResources();
 }

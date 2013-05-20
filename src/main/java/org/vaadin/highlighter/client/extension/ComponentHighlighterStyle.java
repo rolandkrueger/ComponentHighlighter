@@ -17,7 +17,14 @@ import com.google.gwt.resources.client.CssResource;
  */
 public interface ComponentHighlighterStyle extends CssResource {
   /**
+   * <p>
    * CSS style name set on the extended component's widget.
+   * </p>
+   * <p>
+   * Note that by default the CSS definition for this style is empty. This style
+   * is thought to be used to draw an eye-catching border around the extended
+   * component's widget or anything similar.
+   * </p>
    */
   String parentOutline();
 
