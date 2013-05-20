@@ -23,7 +23,11 @@ public interface ComponentHighlighterStyle extends CssResource {
    * <p>
    * Note that by default the CSS definition for this style is empty. This style
    * is thought to be used to draw an eye-catching border around the extended
-   * component's widget or anything similar.
+   * component's widget or anything similar. Unfortunately, this did not work
+   * out as hoped for since adding a border around the widget through this
+   * method disturbed Vaadin's layouting algorithm in such a way that in certain
+   * situations (e.g. when decorating a table component) a number of client-side
+   * exceptions where induced.
    * </p>
    */
   String parentOutline();
