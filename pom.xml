@@ -2,45 +2,54 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
 	<groupId>org.vaadin.addons.componenthighlighter</groupId>
 	<artifactId>componenthighlighter</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0</version>
-	<name>Component Highlighter</name>
+	<version>1.1-SNAPSHOT</version>
+	
+	<name>ComponentHighlighterAddonForVaadin</name>
+	<inceptionYear>2013</inceptionYear>
+	<description>ComponentHighlighter is an add-on for the Vaadin Toolkit that aims at supporting the Vaadin developer while writing a 
+	Vaadin application. The add-on provides an extension for components which will highlight an extended component in the browser with 
+	an eye-catching info label. This feature will only be active when the Vaadin application is running in debug mode.</description>
+
+	<url>https://vaadin.com/directory#addon/componenthighlighter</url>
+
+	<contributors>
+		<contributor>
+			<name>Roland Krüger</name>
+			<roles>
+				<role>developer</role>
+				<role>architect</role>
+			</roles>
+		</contributor>
+	</contributors>
+
+	<licenses>
+		<license>
+			<name>Apache License 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git://github.com/rolandkrueger/ComponentHighlighter.git</connection>
+		<developerConnection>scm:git:https://github.com/rolandkrueger/ComponentHighlighter.git</developerConnection>
+		<url>https://github.com/rolandkrueger/ComponentHighlighter</url>
+	</scm>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/rolandkrueger/ComponentHighlighter/issues</url>
+	</issueManagement>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>7.0.4</vaadin.version>
-		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
+		<vaadin.version>7.0.6</vaadin.version>
 		<jdk.version>1.6</jdk.version>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>vaadin-snapshots</id>
-			<url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-	
-	<pluginRepositories>
-		<pluginRepository>
-			<id>vaadin-snapshots</id>
-			<url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-	
 	<dependencies>
 		<dependency>
 			<groupId>com.vaadin</groupId>
@@ -57,19 +66,41 @@
 	</dependencies>
 
 	<build>
+		<!-- Include the sources in the library's jar to make them available for -->
+		<!-- GWT compilation -->
 		<resources>
 			<resource>
 				<directory>${basedir}/src/main/java</directory>
 			</resource>
 		</resources>
-		
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
 				<configuration>
 					<source>${jdk.version}</source>
 					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+						<manifestEntries>
+							<Vaadin-Package-Version>1</Vaadin-Package-Version>
+							<Vaadin-Widgetsets>org.vaadin.highlighter.ComponentHighlighterWidgetset</Vaadin-Widgetsets>
+							<Vaadin-License-Title>Apache License 2.0</Vaadin-License-Title>
+							<Implementation-Vendor>Roland Krüger</Implementation-Vendor>
+						</manifestEntries>
+					</archive>
 				</configuration>
 			</plugin>
 		</plugins>
