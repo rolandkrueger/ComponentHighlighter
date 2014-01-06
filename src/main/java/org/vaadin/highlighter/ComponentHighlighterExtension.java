@@ -53,7 +53,6 @@ public class ComponentHighlighterExtension extends AbstractExtension {
   }
 
   /**
-   * {@inheritDoc}
    * <p>
    * The given connector will only be extended with the highlighting label, if
    * the application is currently being run in debug mode. This operation will
