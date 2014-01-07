@@ -26,16 +26,14 @@ You are now ready to extend your components with the highlighting label. A typic
 		...
 		public MyComponent() {
 			super();
-			if (!VaadinService.getCurrent().getDeploymentConfiguration().isProductionMode()) {
-				new ComponentHighlighterExtension(this);
-			}
+			new ComponentHighlighterExtension(this);
 			...
 		}
 	}
 	
-Here, you simply create a new extension object for your component if the application is running in debug mode. Querying for the debug mode in that manner will have the effect that in production mode no unnecessary extension objects are created which would then waste your precious heap memory.
+Here, you simply create a new extension object as a local instance in the constructor of a CustomComponent and pass the component to be extended into the extension as a constructor argument, which in this case is the this reference. 
 
-The extension itself guarantees that in production mode an extended component will not be touched in any way on the client side. It is a good thing to do the above check for the debug mode, though, in order to not waste any memory when running in production mode.
+The extension itself guarantees that in production mode an extended component will not be touched in any way on the client side. If your application is running in production mode, the ComponentHighlighterExtension will do nothing when calling its extend() method. It will then just silently return from the extend() method without actually extending the given component. By that, you won't waste any memory for the extension objects when running in production mode. If you create ComponentHighlighterExtension instances as local instances as shown above, the garbage collector will then reclaim the memory of these references right away.
 
 Customization
 -------------
