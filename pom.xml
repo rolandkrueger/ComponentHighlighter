@@ -2,13 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<groupId>org.vaadin.addons.componenthighlighter</groupId>
 	<artifactId>componenthighlighter</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0.1-SNAPSHOT</version>
-	
-	<name>ComponentHighlighterAddonForVaadin</name>
+
+	<name>ComponentHighlighter Add-on for Vaadin</name>
 	<inceptionYear>2013</inceptionYear>
 	<description>ComponentHighlighter is an add-on for the Vaadin Toolkit that aims at supporting the Vaadin developer while writing a 
 	Vaadin application. The add-on provides an extension for components which will highlight an extended component in the browser with 
@@ -23,6 +23,7 @@
 				<role>developer</role>
 				<role>architect</role>
 			</roles>
+			<email>mail [AT] rolandkrueger.info</email>
 		</contributor>
 	</contributors>
 
@@ -47,7 +48,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<vaadin.version>7.0.6</vaadin.version>
-		<jdk.version>1.6</jdk.version>
+		<jdk.version>1.5</jdk.version>
+		<widgetset.name>org.vaadin.highlighter.ComponentHighlighterWidgetset</widgetset.name>
 	</properties>
 
 	<dependencies>
@@ -96,14 +98,41 @@
 						</manifest>
 						<manifestEntries>
 							<Vaadin-Package-Version>1</Vaadin-Package-Version>
-							<Vaadin-Widgetsets>org.vaadin.highlighter.ComponentHighlighterWidgetset</Vaadin-Widgetsets>
+							<Vaadin-Widgetsets>${widgetset.name}</Vaadin-Widgetsets>
 							<Vaadin-License-Title>Apache License 2.0</Vaadin-License-Title>
 							<Implementation-Vendor>Roland Krüger</Implementation-Vendor>
 						</manifestEntries>
 					</archive>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/assembly/assembly.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
 		</plugins>
 
 	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>
+		</plugins>
+	</reporting>
 </project>

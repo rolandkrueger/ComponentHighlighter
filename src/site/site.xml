@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project name="Vaadin Add-on ComponentHighlighter">
+
+  <body>
+    <links>
+      <item name="Vaadin Directory" href="https://vaadin.com/directory#addon/componenthighlighter" />
+      <item name="GitHub" href="https://github.com/rolandkrueger/ComponentHighlighter"/>
+      <item name="Blog" href="http://blog.oio.de/"/>
+    </links>
+
+    <menu ref="reports"/>
+
+  </body>
+</project>

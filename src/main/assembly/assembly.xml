@@ -1,0 +1,25 @@
+<assembly>
+    <id>dist</id>
+  
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>jar</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+        </fileSet>
+		
+		<fileSet>
+            <directory>${project.build.directory}/site</directory>
+            <outputDirectory>doc</outputDirectory>
+            <includes>
+                <include>*</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
