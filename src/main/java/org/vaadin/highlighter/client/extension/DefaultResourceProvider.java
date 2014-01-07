@@ -1,7 +1,6 @@
 package org.vaadin.highlighter.client.extension;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.resources.client.CssResource;
 
 /**
  * {@link ResourceProvider} which is used by default in the
@@ -10,8 +9,8 @@ import com.google.gwt.resources.client.CssResource;
  * GWT's deferred binding mechanism.
  * 
  * @author Roland Krüger
- * @see ResourceProvider for more information on configuratively swapping the
- *      {@link CssResource} used by this extension
+ * @see ResourceProvider ResourceProvider for more information on
+ *      configuratively swapping the CssResource used by this extension
  */
 public class DefaultResourceProvider implements ResourceProvider {
 
