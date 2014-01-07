@@ -21,5 +21,13 @@
                 <include>*</include>
             </includes>
         </fileSet>
+		
+		<fileSet>
+            <directory>${basedir}</directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>README.md</include>
+            </includes>
+        </fileSet>
     </fileSets>
 </assembly>

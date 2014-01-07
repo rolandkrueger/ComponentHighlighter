@@ -52,6 +52,10 @@ ComponentHighlighter for Vaadin
  	</replace-with>
 ----------------------------------------
 
+* Screenshot
+
+[images/screenshot.png] Screenshot with the ComponentHighlighter extension in action
+
 * Blog Post
 
    A blog post has been published that describes the add-on in more detail. You'll find that post at {{{http://blog.oio.de}http://blog.oio.de}}.
