@@ -1,0 +1,7 @@
+﻿Manifest-Version: 1.0
+Vaadin-Package-Version: 1
+Vaadin-Addon: ${project.build.finalName}
+Vaadin-License-Title: Apache License 2.0
+Implementation-Vendor: Roland Krüger
+Implementation-Title: ComponentHighlighter
+Implementation-Version: ${project.version}
