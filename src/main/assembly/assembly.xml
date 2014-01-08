@@ -4,7 +4,9 @@
     <formats>
         <format>zip</format>
     </formats>
-
+	
+	<includeBaseDirectory>false</includeBaseDirectory>
+	
     <fileSets>
         <fileSet>
             <directory>${project.build.directory}</directory>
@@ -27,6 +29,7 @@
             <outputDirectory></outputDirectory>
             <includes>
                 <include>README.md</include>
+				<include>COPYING</include>
             </includes>
         </fileSet>
     </fileSets>
