@@ -47,7 +47,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>7.0.6</vaadin.version>
+		<vaadin.version>7.0.0</vaadin.version>
 		<jdk.version>1.5</jdk.version>
 		<widgetset.name>org.vaadin.highlighter.ComponentHighlighterWidgetset</widgetset.name>
 	</properties>
@@ -104,6 +104,12 @@
 						</manifestEntries>
 					</archive>
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.4.2</version>
 			</plugin>
 		</plugins>
 	</build>
