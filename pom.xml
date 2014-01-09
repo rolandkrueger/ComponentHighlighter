@@ -6,7 +6,7 @@
 	<groupId>org.vaadin.addons.componenthighlighter</groupId>
 	<artifactId>componenthighlighter</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0</version>
+	<version>1.1-SNAPSHOT</version>
 
 	<name>ComponentHighlighter Add-on for Vaadin</name>
 	<inceptionYear>2013</inceptionYear>
