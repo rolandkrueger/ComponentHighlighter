@@ -35,9 +35,9 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:git://github.com/rolandkrueger/ComponentHighlighter.git</connection>
-		<developerConnection>scm:git:https://github.com/rolandkrueger/ComponentHighlighter.git</developerConnection>
-		<url>https://github.com/rolandkrueger/ComponentHighlighter</url>
+		<connection>scm:git:git@github.com:rolandkrueger/ComponentHighlighter.git</connection>
+		<developerConnection>scm:git:git@github.com:rolandkrueger/ComponentHighlighter.git</developerConnection>
+		<url>scm:git:git@github.com:rolandkrueger/ComponentHighlighter.git</url>
 	</scm>
 
 	<issueManagement>
