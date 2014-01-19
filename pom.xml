@@ -8,7 +8,7 @@
 	<packaging>jar</packaging>
 	<version>1.1-SNAPSHOT</version>
 
-	<name>ComponentHighlighter Add-on for Vaadin</name>
+	<name>ComponentHighlighter</name>
 	<inceptionYear>2013</inceptionYear>
 	<description>ComponentHighlighter is an add-on for the Vaadin Toolkit that aims at supporting the Vaadin developer while writing a 
 	Vaadin application. The add-on provides an extension for components which will highlight an extended component in the browser with 
