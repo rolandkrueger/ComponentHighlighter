@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.5.0//EN"
+  "http://google-web-toolkit.googlecode.com/svn/tags/2.5.0/distro-source/core/src/gwt-module.dtd">
+  
+<module>
+	<inherits name="com.vaadin.DefaultWidgetSet" />
+
+	<!-- Inherit the Resources module to be able to define Client Bundles. -->
+	<inherits name="com.google.gwt.resources.Resources" />
+</module>
