@@ -44,24 +44,23 @@ import com.google.gwt.resources.client.CssResource;
  * definition with the following statement for deferred binding which will
  * effectively replace the {@link DefaultResourceProvider} with your own
  * implementation:
- * 
  * <pre>
  * &lt;replace-with class="com.example.client.MyResourceProvider"&gt;
  *     &lt;when-type-is class="org.vaadin.highlighter.client.extension.DefaultResourceProvider" /&gt;
  * &lt;/replace-with&gt;
  * </pre>
- * 
- * </p>
- * 
+ *
  * @author Roland Krüger
  * @see DefaultResourceProvider
  * @see DefaultComponentHighlighterResources
  */
 public interface ResourceProvider {
 
-  /**
-   * Return the client bundle interface to be used for styling the component
-   * highlighting labels.
-   */
-  public ComponentHighlighterResources getResources();
+    /**
+     * Return the client bundle interface to be used for styling the component
+     * highlighting labels.
+     *
+     * @return ComponentHighlighterResources
+     */
+    ComponentHighlighterResources getResources();
 }

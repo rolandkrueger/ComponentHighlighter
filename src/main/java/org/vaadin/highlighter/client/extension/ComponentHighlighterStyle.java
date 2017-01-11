@@ -26,29 +26,32 @@ import com.google.gwt.resources.client.CssResource;
  * style {@link #debugLabel()} will be set on the highlighting label itself. By
  * default, a pink background color is set for this label so that it stands out
  * when rendered in the browser.
- * 
+ *
  * @author Roland Krüger
- * 
  */
 public interface ComponentHighlighterStyle extends CssResource {
-  /**
-   * <p>
-   * CSS style name set on the extended component's widget.
-   * </p>
-   * <p>
-   * Note that by default the CSS definition for this style is empty. This style
-   * is thought to be used to draw an eye-catching border around the extended
-   * component's widget or anything similar. Unfortunately, this did not work
-   * out as hoped for since adding a border around the widget through this
-   * method disturbed Vaadin's layouting algorithm in such a way that in certain
-   * situations (e.g. when decorating a table component) a number of client-side
-   * exceptions where induced.
-   * </p>
-   */
-  String parentOutline();
+    /**
+     * <p>
+     * CSS style name set on the extended component's widget.
+     * </p>
+     * <p>
+     * Note that by default the CSS definition for this style is empty. This style
+     * is thought to be used to draw an eye-catching border around the extended
+     * component's widget or anything similar. Unfortunately, this did not work
+     * out as hoped for since adding a border around the widget through this
+     * method disturbed Vaadin's layouting algorithm in such a way that in certain
+     * situations (e.g. when decorating a table component) a number of client-side
+     * exceptions where induced.
+     * </p>
+     *
+     * @return parentOutline style
+     */
+    String parentOutline();
 
-  /**
-   * CSS style name set on the highlighting label span-element.
-   */
-  String debugLabel();
+    /**
+     * CSS style name set on the highlighting label span-element.
+     *
+     * @return debugLabel style
+     */
+    String debugLabel();
 }
