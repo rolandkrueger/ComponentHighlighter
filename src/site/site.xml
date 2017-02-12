@@ -1,14 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <project name="Vaadin Add-on ComponentHighlighter">
 
-  <body>
-    <links>
-      <item name="Vaadin Directory" href="https://vaadin.com/directory#addon/componenthighlighter" />
-      <item name="GitHub" href="https://github.com/rolandkrueger/ComponentHighlighter"/>
-      <item name="Blog" href="http://blog.oio.de/"/>
-    </links>
+    <body>
+        <links>
+            <item name="GitHub" href="https://www.github.com/rolandkrueger/ComponentHighlighter"/>
+        </links>
 
-    <menu ref="reports"/>
+        <menu ref="reports"/>
+    </body>
 
-  </body>
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.5</version>
+    </skin>
 </project>
